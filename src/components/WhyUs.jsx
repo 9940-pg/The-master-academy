@@ -1,4 +1,4 @@
-import SpotlightCard from "./SpotlightCard";
+import SpotlightCard from "./Spotlightcard";
 
 const highlights = [
   "Live Interactive Zoom Classes",
