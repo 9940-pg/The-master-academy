@@ -7,10 +7,10 @@ const chips = [
       </svg>
     ),
     badge: "Core",
-    className: "top-[18%] left-6 lg:left-10",
+    className: "top-[10%] left-4 2xl:left-10",
     duration: "4.5s",
     delay: "0s",
-    glow: "shadow-[0_0_15px_rgba(56,189,248,0.25)]",
+    glow: "shadow-[0_0_15px_rgba(56,189,248,0.2)]",
   },
   {
     label: "AI & ML",
@@ -20,10 +20,10 @@ const chips = [
       </svg>
     ),
     badge: "Trending",
-    className: "top-[64%] left-4 lg:left-8",
+    className: "top-[64%] left-3 2xl:left-8",
     duration: "5.8s",
     delay: "1s",
-    glow: "shadow-[0_0_15px_rgba(192,132,252,0.25)]",
+    glow: "shadow-[0_0_15px_rgba(192,132,252,0.2)]",
   },
   {
     label: "Web Dev",
@@ -33,10 +33,10 @@ const chips = [
       </svg>
     ),
     badge: "Full Stack",
-    className: "top-[16%] right-6 lg:right-10",
+    className: "top-[10%] right-4 2xl:right-10",
     duration: "4.8s",
     delay: "0.5s",
-    glow: "shadow-[0_0_15px_rgba(52,211,153,0.25)]",
+    glow: "shadow-[0_0_15px_rgba(52,211,153,0.2)]",
   },
   {
     label: "AWS Cloud",
@@ -46,10 +46,10 @@ const chips = [
       </svg>
     ),
     badge: "Certified",
-    className: "top-[44%] right-4 lg:right-8",
+    className: "top-[42%] right-3 2xl:right-8",
     duration: "5.2s",
     delay: "1.5s",
-    glow: "shadow-[0_0_15px_rgba(251,191,36,0.25)]",
+    glow: "shadow-[0_0_15px_rgba(251,191,36,0.2)]",
   },
   {
     label: "DevOps & CI/CD",
@@ -59,10 +59,10 @@ const chips = [
       </svg>
     ),
     badge: "Hands-on",
-    className: "top-[72%] right-8 lg:right-14",
+    className: "top-[70%] right-6 2xl:right-12",
     duration: "6.0s",
     delay: "0.8s",
-    glow: "shadow-[0_0_15px_rgba(244,63,94,0.25)]",
+    glow: "shadow-[0_0_15px_rgba(244,63,94,0.2)]",
   },
 ];
 
@@ -75,7 +75,7 @@ const stats = [
 
 export default function Hero() {
   return (
-    <section id="home" className="relative w-full min-h-[85vh] bg-[#0B0A12] overflow-hidden flex items-center pt-24 pb-14 sm:pt-28 sm:pb-16">
+    <section id="home" className="relative w-full bg-[#0B0A12] overflow-hidden flex flex-col items-center justify-center pt-24 pb-12 sm:pt-28 sm:pb-16">
       {/* Background ambient lighting and grid overlay */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Soft top-center spotlight */}
@@ -135,17 +135,17 @@ export default function Hero() {
           <span className="text-[#C4B5FD] font-normal hidden xs:inline">100% Practical</span>
         </div>
 
-        {/* Main Title - scaled proportionally to fit any screen */}
-        <h1 className="font-[Manrope] font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-[42px] leading-[1.18] sm:leading-[1.16] tracking-tight text-[#F8F7FC] mb-3.5 sm:mb-4 max-w-3xl">
+        {/* Main Title - balanced and prevented from breaking awkwardly */}
+        <h1 className="font-[Manrope] font-extrabold text-2xl sm:text-3xl md:text-[34px] lg:text-[40px] leading-[1.2] sm:leading-[1.18] tracking-tight text-[#F8F7FC] mb-3 sm:mb-4 max-w-2xl sm:max-w-3xl">
           Master Future Skills.{" "}
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#C4B5FD] via-[#D8B4FE] to-[#A855F7] drop-shadow-[0_4px_24px_rgba(168,85,247,0.3)]">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#C4B5FD] via-[#D8B4FE] to-[#A855F7] drop-shadow-[0_4px_24px_rgba(168,85,247,0.3)] whitespace-nowrap">
             Build Real Projects.
           </span>{" "}
-          Learn from Anywhere.
+          <span className="inline-block whitespace-nowrap">Learn from Anywhere.</span>
         </h1>
 
         {/* Subtitle - compact and readable */}
-        <p className="text-xs sm:text-sm md:text-[15px] text-[#A6A3B0] max-w-xl mb-6 sm:mb-7 leading-relaxed font-normal">
+        <p className="text-xs sm:text-sm md:text-[15px] text-[#A6A3B0] max-w-xl mb-5 sm:mb-6 leading-relaxed font-normal">
           Live online, instructor-led technology training designed to help learners
           build practical skills, real-world portfolio projects, and industry-ready confidence.
         </p>
