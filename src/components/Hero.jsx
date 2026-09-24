@@ -57,7 +57,7 @@ export default function Hero() {
           🎓 Live Instructor-Led Tech Academy
         </div>
 
-        <h1 className="font-[Manrope] font-extrabold text-3xl sm:text-5xl md:text-6xl lg:text-[64px] leading-[1.14] text-[#F8F7FC] mb-5 sm:mb-6">
+        <h1 className="font-[Manrope] font-extrabold text-2xl sm:text-4xl md:text-5xl lg:text-[52px] leading-[1.15] text-[#F8F7FC] mb-5 sm:mb-6">
           Master Future Skills.{" "}
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#C4B5FD] via-[#A855F7] to-[#8B5CF6]">
             Build Real Projects.

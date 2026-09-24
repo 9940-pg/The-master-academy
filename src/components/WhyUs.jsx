@@ -42,10 +42,10 @@ export default function WhyUs() {
           <span className="block text-xs font-bold tracking-[2.5px] text-[#C4B5FD] uppercase mb-3">
             WHY CHOOSE US
           </span>
-          <h2 className="font-sans font-extrabold text-2xl sm:text-3xl md:text-[40px] leading-[1.15] text-[#F8F7FC] mb-4 sm:mb-5 break-words">
+          <h2 className="font-[Manrope] font-extrabold text-2xl sm:text-3xl md:text-[40px] leading-[1.15] text-[#F8F7FC] mb-4 sm:mb-5">
             What Makes Master Academy Different
           </h2>
-          <p className="text-[#A6A3B0] text-sm sm:text-base md:text-lg leading-relaxed italic">
+          <p className="text-[#A6A3B0] text-xs sm:text-sm md:text-base leading-relaxed italic">
             "We don't just teach syntax — we cultivate confident, employable problem-solvers."
           </p>
         </div>
@@ -72,7 +72,7 @@ export default function WhyUs() {
                 <polyline points="12 6 12 12 16 14" />
               </svg>
             </div>
-            <h3 className="font-sans font-bold text-xl sm:text-2xl text-[#F8F7FC] mb-5 sm:mb-6">
+            <h3 className="font-[Manrope] font-bold text-xl sm:text-2xl text-[#F8F7FC] mb-5 sm:mb-6">
               Flexible & Accessible Learning
             </h3>
             <ul className="flex flex-col gap-3.5 sm:gap-4">
@@ -91,7 +91,7 @@ export default function WhyUs() {
                 <path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z" />
               </svg>
             </div>
-            <h3 className="font-sans font-bold text-xl sm:text-2xl text-[#F8F7FC] mb-5 sm:mb-6">
+            <h3 className="font-[Manrope] font-bold text-xl sm:text-2xl text-[#F8F7FC] mb-5 sm:mb-6">
               End-to-End Career Acceleration
             </h3>
             <ul className="flex flex-col gap-3.5 sm:gap-4">
