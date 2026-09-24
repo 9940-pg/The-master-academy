@@ -70,37 +70,25 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between
-      h-20 px-4 sm:px-6 md:px-12 border-b transition-all duration-300
+      h-20 px-4 sm:px-6 lg:px-8 xl:px-12 border-b transition-all duration-300
       ${solid
           ? "bg-[#0B0A12]/92 backdrop-blur-md border-white/10 shadow-lg shadow-black/40"
           : "bg-[#0B0A12]/40 backdrop-blur-sm border-transparent"
         }`}
     >
-      {/* Left: Hamburger (below 2xl) + Logo + Hairline + Navlinks (2xl+ only) */}
-      <div className="flex items-center gap-4 md:gap-8 min-w-0">
-        <button
-          type="button"
-          aria-label="Menu"
-          aria-expanded={menuOpen}
-          onClick={() => setMenuOpen((v) => !v)}
-          className="2xl:hidden flex flex-col justify-center items-center gap-1.5 w-9 h-9 rounded-lg bg-white/5 border border-white/10 shrink-0"
-        >
-          <span className={`block h-0.5 w-5 rounded-full bg-[#F8F7FC] transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-[6.5px]" : ""}`} />
-          <span className={`block h-0.5 w-5 rounded-full bg-[#F8F7FC] transition-all duration-300 ${menuOpen ? "opacity-0" : "opacity-100"}`} />
-          <span className={`block h-0.5 w-5 rounded-full bg-[#F8F7FC] transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-[6.5px]" : ""}`} />
-        </button>
-
+      {/* Left: Logo + Hairline divider + Desktop Navlinks */}
+      <div className="flex items-center gap-3 xl:gap-8 min-w-0">
         <a href="#home" onClick={(e) => handleNavClick(e, "#home")} className="flex items-center focus:outline-none shrink-0">
           <Logo className="h-8 sm:h-9 md:h-10 w-auto" />
         </a>
 
         <div
-          className={`hidden 2xl:block w-px bg-gradient-to-b from-transparent via-[#8B5CF6]/50 to-transparent
+          className={`hidden xl:block w-px bg-gradient-to-b from-transparent via-[#8B5CF6]/50 to-transparent
           transition-all duration-700 ease-out
           ${loaded ? "h-8 opacity-100" : "h-0 opacity-0"}`}
         />
 
-        <ul className="hidden 2xl:flex items-center gap-5 list-none">
+        <ul className="hidden lg:flex items-center gap-2.5 xl:gap-5 2xl:gap-6 list-none">
           {links.map(({ label, to, badge }) => {
             const active = activeSection === to;
             return (
@@ -109,16 +97,16 @@ export default function Navbar() {
                   href={to}
                   onClick={(e) => handleNavClick(e, to)}
                   aria-current={active ? "page" : undefined}
-                  className={`group inline-flex items-center text-[13px] font-medium tracking-wide py-2 whitespace-nowrap transition-colors duration-200
+                  className={`group inline-flex items-center text-xs xl:text-[13px] font-medium tracking-wide py-1.5 xl:py-2 whitespace-nowrap transition-colors duration-200
                     ${active ? "text-[#F8F7FC]" : "text-[#A6A3B0] hover:text-[#F8F7FC]"}`}
                 >
                   <span
                     className={`h-1.5 rounded-full bg-[#8B5CF6] shadow-[0_0_8px_#8B5CF6] transition-all duration-300 ease-out
-                      ${active ? "w-1.5 opacity-100 mr-2" : "w-0 opacity-0 mr-0 group-hover:w-1.5 group-hover:opacity-100 group-hover:mr-2"}`}
+                      ${active ? "w-1.5 opacity-100 mr-1.5 xl:mr-2" : "w-0 opacity-0 mr-0 group-hover:w-1.5 group-hover:opacity-100 group-hover:mr-1.5 xl:group-hover:mr-2"}`}
                   />
                   <span>{label}</span>
                   {badge && (
-                    <span className="ml-2 inline-block align-middle text-[9px] font-bold tracking-wider text-white px-2 py-0.5 rounded-full bg-gradient-to-r from-[#A855F7] to-[#7C3AED] shadow-sm">
+                    <span className="ml-1.5 xl:ml-2 inline-block align-middle text-[9px] font-bold tracking-wider text-white px-1.5 xl:px-2 py-0.5 rounded-full bg-gradient-to-r from-[#A855F7] to-[#7C3AED] shadow-sm">
                       {badge}
                     </span>
                   )}
@@ -129,21 +117,34 @@ export default function Navbar() {
         </ul>
       </div>
 
-      {/* Right: CTA — shrink-0 so it can never get squeezed by the links */}
-      <div className="flex items-center gap-4 shrink-0">
+      {/* Right: CTA button + Mobile hamburger toggle */}
+      <div className="flex items-center gap-3 shrink-0">
         <a
           href="#courses"
           onClick={(e) => handleNavClick(e, "#courses")}
-          className="hidden sm:inline-flex items-center text-xs md:text-sm font-semibold tracking-wide text-white bg-gradient-to-r from-[#A855F7] to-[#7C3AED] hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] rounded-full px-6 py-2.5 transition-all duration-300 shadow-[0_8px_24px_rgba(139,92,246,0.35)] whitespace-nowrap"
+          className="hidden sm:inline-flex items-center text-xs xl:text-sm font-semibold tracking-wide text-white bg-gradient-to-r from-[#A855F7] to-[#7C3AED] hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] rounded-full px-4 py-2 xl:px-6 xl:py-2.5 transition-all duration-300 shadow-[0_8px_24px_rgba(139,92,246,0.35)] whitespace-nowrap"
         >
           Explore Courses
         </a>
+
+        {/* Mobile / Tablet Menu Button (< lg) */}
+        <button
+          type="button"
+          aria-label="Menu"
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((v) => !v)}
+          className="lg:hidden flex flex-col justify-center items-center gap-1.5 w-10 h-10 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 transition-colors shrink-0"
+        >
+          <span className={`block h-0.5 w-5 rounded-full bg-[#F8F7FC] transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-[8px]" : ""}`} />
+          <span className={`block h-0.5 w-5 rounded-full bg-[#F8F7FC] transition-all duration-300 ${menuOpen ? "opacity-0" : "opacity-100"}`} />
+          <span className={`block h-0.5 w-5 rounded-full bg-[#F8F7FC] transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-[8px]" : ""}`} />
+        </button>
       </div>
 
-      {/* Mobile / tablet / laptop nav panel — shown below 2xl */}
+      {/* Mobile / tablet nav panel — shown below lg */}
       <div
         aria-hidden={!menuOpen}
-        className={`2xl:hidden fixed top-20 left-0 right-0 bg-[#0B0A12]/98 backdrop-blur-xl
+        className={`lg:hidden fixed top-20 left-0 right-0 bg-[#0B0A12]/98 backdrop-blur-xl
         border-b border-white/10 overflow-y-auto transition-all duration-300 ease-in-out
         ${menuOpen ? "max-h-[calc(100vh-5rem)] opacity-100 py-6" : "max-h-0 opacity-0 py-0 pointer-events-none"}`}
       >
