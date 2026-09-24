@@ -220,14 +220,14 @@ export default function Contact({ prefilledCourse }) {
             Admissions Open for Upcoming Batches
           </div>
 
-          <h2 className="font-sans font-extrabold text-2xl sm:text-4xl md:text-5xl lg:text-[52px] leading-[1.14] text-[#F8F7FC] max-w-3xl mx-auto mb-5 sm:mb-6 break-words">
+          <h2 className="font-[Manrope] font-extrabold text-2xl sm:text-3xl md:text-4xl leading-[1.18] text-[#F8F7FC] max-w-2xl mx-auto mb-4 sm:mb-5">
             Ready to Build Your Skills &{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#C4B5FD] via-[#A855F7] to-[#8B5CF6]">
               Real-World Confidence?
             </span>
           </h2>
 
-          <p className="text-[#A6A3B0] text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed font-normal">
+          <p className="text-[#A6A3B0] text-xs sm:text-sm md:text-base max-w-xl mx-auto mb-6 sm:mb-8 leading-relaxed font-normal">
             Join hundreds of motivated learners who have transformed their careers with Master Academy's live hands-on programs.
           </p>
 

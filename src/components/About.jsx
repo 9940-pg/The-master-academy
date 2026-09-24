@@ -40,15 +40,15 @@ export default function About() {
           <span className="inline-block text-xs font-bold tracking-[2.5px] text-[#C4B5FD] uppercase mb-3">
             ABOUT US
           </span>
-          <h2 className="font-[Manrope] font-extrabold text-2xl sm:text-3xl md:text-[42px] leading-[1.15] text-[#F8F7FC] mb-5 sm:mb-6">
+          <h2 className="font-[Manrope] font-extrabold text-2xl sm:text-3xl md:text-[36px] leading-[1.16] text-[#F8F7FC] mb-4 sm:mb-5">
             Empowering Next-Gen Tech Professionals
           </h2>
-          <p className="text-[#D5D3DC] text-sm sm:text-base md:text-lg leading-relaxed mb-5 sm:mb-6 font-normal">
+          <p className="text-[#D5D3DC] text-xs sm:text-sm md:text-[15px] leading-relaxed mb-3.5 sm:mb-4 font-normal">
             Master Academy is a career-focused learning platform designed to help
             students, beginners, and working professionals build real-world, high-demand skills
             that matter in today's tech industry.
           </p>
-          <p className="text-[#A6A3B0] text-xs sm:text-sm md:text-base leading-relaxed mb-6 sm:mb-8">
+          <p className="text-[#A6A3B0] text-xs sm:text-sm leading-relaxed mb-5 sm:mb-6">
             We don't believe in boring theoretical slides. Every single concept is paired with
             live coding, cloud deployment, and portfolio-ready projects — combined with soft skills
             and interview confidence training.
