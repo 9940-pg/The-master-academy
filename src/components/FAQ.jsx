@@ -45,10 +45,10 @@ export default function FAQ() {
           <span className="block text-xs font-bold tracking-[2.5px] text-[#C4B5FD] uppercase mb-3">
             HAVE QUESTIONS?
           </span>
-          <h2 className="font-sans font-extrabold text-2xl sm:text-3xl md:text-[40px] leading-[1.15] text-[#F8F7FC] break-words">
+          <h2 className="font-[Manrope] font-extrabold text-xl sm:text-2xl md:text-[32px] leading-[1.15] text-[#F8F7FC]">
             Frequently Asked Questions
           </h2>
-          <p className="text-xs sm:text-sm md:text-base text-[#A6A3B0] mt-3 leading-relaxed">
+          <p className="text-xs sm:text-xs md:text-sm text-[#A6A3B0] mt-3 leading-relaxed">
             Everything you need to know about our courses, live sessions, certification, and career support.
           </p>
         </div>
@@ -59,21 +59,20 @@ export default function FAQ() {
             return (
               <div
                 key={faq.q}
-                className="bg-[#15141F] border border-white/10 rounded-2xl overflow-hidden transition-all duration-300 hover:border-[#8B5CF6]/40"
+                className="bg-[#15141F] border border-white/10 rounded-2xl overflow-hidden transition-colors duration-300 hover:border-[#8B5CF6]/40"
               >
                 <button
                   type="button"
                   onClick={() => toggle(idx)}
-                  className="w-full text-left px-4 sm:px-6 py-4 sm:py-5 flex items-center justify-between gap-3 sm:gap-4 focus:outline-none cursor-pointer"
                   aria-expanded={isOpen}
+                  className="w-full text-left px-4 sm:px-6 py-4 sm:py-5 flex items-center justify-between gap-3 sm:gap-4 cursor-pointer focus:outline-none focus-visible:bg-white/[0.04]"
                 >
-                  <span className="font-sans font-bold text-sm sm:text-base md:text-lg text-[#F8F7FC] leading-snug">
+                  <span className="font-[Manrope] font-bold text-sm sm:text-sm md:text-base text-[#F8F7FC] leading-snug">
                     {faq.q}
                   </span>
                   <div
-                    className={`w-7 sm:w-8 h-7 sm:h-8 rounded-full bg-white/5 flex items-center justify-center shrink-0 text-[#C4B5FD] transition-transform duration-300 ${
-                      isOpen ? "rotate-180 bg-[#8B5CF6]/20" : ""
-                    }`}
+                    className={`w-7 sm:w-8 h-7 sm:h-8 rounded-full bg-white/5 flex items-center justify-center shrink-0 text-[#C4B5FD] transition-transform duration-300 ${isOpen ? "rotate-180 bg-[#8B5CF6]/20" : ""
+                      }`}
                   >
                     <svg viewBox="0 0 24 24" className="w-4 h-4 fill-none stroke-current stroke-2">
                       <polyline points="6 9 12 15 18 9" />
@@ -81,11 +80,18 @@ export default function FAQ() {
                   </div>
                 </button>
 
-                {isOpen && (
-                  <div className="px-4 sm:px-6 pb-5 sm:pb-6 pt-1 text-xs sm:text-sm md:text-base text-[#A6A3B0] leading-relaxed border-t border-white/5">
-                    {faq.a}
+                {/* Grid-rows trick: content always mounted, height animates via
+                    0fr -> 1fr instead of instant mount/unmount. */}
+                <div
+                  className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                    }`}
+                >
+                  <div className="overflow-hidden">
+                    <div className="px-4 sm:px-6 pb-5 sm:pb-6 pt-1 text-xs sm:text-xs md:text-sm text-[#A6A3B0] leading-relaxed border-t border-white/5">
+                      {faq.a}
+                    </div>
                   </div>
-                )}
+                </div>
               </div>
             );
           })}
@@ -94,7 +100,7 @@ export default function FAQ() {
         {/* Still have questions banner */}
         <div className="mt-10 sm:mt-12 bg-[#15141F]/60 border border-white/10 rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 text-center sm:text-left">
           <div>
-            <h4 className="font-sans font-bold text-base text-[#F8F7FC]">Still have questions?</h4>
+            <h4 className="font-[Manrope] font-bold text-sm text-[#F8F7FC]">Still have questions?</h4>
             <p className="text-xs text-[#A6A3B0] mt-0.5">Our admissions counselors are available on WhatsApp to guide you.</p>
           </div>
           <a

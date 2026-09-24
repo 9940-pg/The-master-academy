@@ -7,7 +7,7 @@ export default function SpotlightOverlay() {
   const [active, setActive] = useState(false);
 
   useEffect(() => {
-    // Disable on touch screens so mobile users have clear view without missing mouse
+    // Disable on touch screens so mobile users have a clear view without a mouse
     if (typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches) {
       return;
     }
@@ -17,7 +17,7 @@ export default function SpotlightOverlay() {
       if (!el) return;
       el.style.setProperty("--x", `${e.clientX}px`);
       el.style.setProperty("--y", `${e.clientY}px`);
-      if (!active) setActive(true);
+      setActive((prev) => (prev ? prev : true));
     };
     const onLeave = () => setActive(false);
 
@@ -27,7 +27,7 @@ export default function SpotlightOverlay() {
       window.removeEventListener("mousemove", onMove);
       document.documentElement.removeEventListener("mouseleave", onLeave);
     };
-  }, [active]);
+  }, []);
 
   return (
     <div
@@ -37,7 +37,7 @@ export default function SpotlightOverlay() {
       style={{
         opacity: active ? 1 : 0,
         background:
-          "radial-gradient(280px circle at var(--x, 50%) var(--y, 50%), rgba(139,92,246,0.18), transparent 55%), rgba(6,5,10,0.25)",
+          "radial-gradient(280px circle at var(--x, 50%) var(--y, 50%), rgba(139,92,246,0.18), transparent 55%), rgba(6,5,10,0.5)",
         WebkitMaskImage:
           "radial-gradient(260px circle at var(--x, 50%) var(--y, 50%), transparent 0%, transparent 45%, black 85%)",
         maskImage:

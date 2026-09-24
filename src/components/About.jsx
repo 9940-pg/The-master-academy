@@ -9,6 +9,29 @@ const pillars = [
   "Lifetime Alumni Support",
 ];
 
+const features = [
+  {
+    n: "01",
+    title: "Practical Learning",
+    copy: "Build functional applications from scratch with guidance on industry best practices and code reviews.",
+  },
+  {
+    n: "02",
+    title: "Live Zoom Classes",
+    copy: "Interact directly with instructors, ask real-time questions, and get your doubts resolved instantly.",
+  },
+  {
+    n: "03",
+    title: "AI Integration",
+    copy: "Master cutting-edge AI tools (ChatGPT, Copilot, Canva AI, APIs) to boost your development speed by 10x.",
+  },
+  {
+    n: "04",
+    title: "Career Mentoring",
+    copy: "Resume reviews, LinkedIn optimization, GitHub portfolio refinement, and mock interview guidance.",
+  },
+];
+
 export default function About() {
   return (
     <section id="about" className="bg-[#0B0A12] px-4 sm:px-6 md:px-10 py-20 sm:py-24 md:py-28 border-t border-white/5 relative">
@@ -17,7 +40,7 @@ export default function About() {
           <span className="inline-block text-xs font-bold tracking-[2.5px] text-[#C4B5FD] uppercase mb-3">
             ABOUT US
           </span>
-          <h2 className="font-sans font-extrabold text-2xl sm:text-3xl md:text-[42px] leading-[1.15] text-[#F8F7FC] mb-5 sm:mb-6 break-words">
+          <h2 className="font-[Manrope] font-extrabold text-2xl sm:text-3xl md:text-[42px] leading-[1.15] text-[#F8F7FC] mb-5 sm:mb-6">
             Empowering Next-Gen Tech Professionals
           </h2>
           <p className="text-[#D5D3DC] text-sm sm:text-base md:text-lg leading-relaxed mb-5 sm:mb-6 font-normal">
@@ -46,45 +69,15 @@ export default function About() {
 
         {/* Visual feature box */}
         <div className="grid sm:grid-cols-2 gap-5">
-          <SpotlightCard className="bg-[#15141F] border border-white/10 rounded-2xl p-6 flex flex-col justify-between">
-            <div className="w-10 h-10 rounded-xl bg-[#8B5CF6]/15 flex items-center justify-center text-[#C4B5FD] font-bold text-lg mb-4">
-              01
-            </div>
-            <h3 className="font-sans font-bold text-lg text-[#F8F7FC] mb-2">Practical Learning</h3>
-            <p className="text-xs text-[#A6A3B0] leading-relaxed">
-              Build functional applications from scratch with guidance on industry best practices and code reviews.
-            </p>
-          </SpotlightCard>
-
-          <SpotlightCard className="bg-[#15141F] border border-white/10 rounded-2xl p-6 flex flex-col justify-between">
-            <div className="w-10 h-10 rounded-xl bg-[#8B5CF6]/15 flex items-center justify-center text-[#C4B5FD] font-bold text-lg mb-4">
-              02
-            </div>
-            <h3 className="font-sans font-bold text-lg text-[#F8F7FC] mb-2">Live Zoom Classes</h3>
-            <p className="text-xs text-[#A6A3B0] leading-relaxed">
-              Interact directly with instructors, ask real-time questions, and get your doubts resolved instantly.
-            </p>
-          </SpotlightCard>
-
-          <SpotlightCard className="bg-[#15141F] border border-white/10 rounded-2xl p-6 flex flex-col justify-between">
-            <div className="w-10 h-10 rounded-xl bg-[#8B5CF6]/15 flex items-center justify-center text-[#C4B5FD] font-bold text-lg mb-4">
-              03
-            </div>
-            <h3 className="font-sans font-bold text-lg text-[#F8F7FC] mb-2">AI Integration</h3>
-            <p className="text-xs text-[#A6A3B0] leading-relaxed">
-              Master cutting-edge AI tools (ChatGPT, Copilot, Canva AI, APIs) to boost your development speed by 10x.
-            </p>
-          </SpotlightCard>
-
-          <SpotlightCard className="bg-[#15141F] border border-white/10 rounded-2xl p-6 flex flex-col justify-between">
-            <div className="w-10 h-10 rounded-xl bg-[#8B5CF6]/15 flex items-center justify-center text-[#C4B5FD] font-bold text-lg mb-4">
-              04
-            </div>
-            <h3 className="font-sans font-bold text-lg text-[#F8F7FC] mb-2">Career Mentoring</h3>
-            <p className="text-xs text-[#A6A3B0] leading-relaxed">
-              Resume reviews, LinkedIn optimization, GitHub portfolio refinement, and mock interview guidance.
-            </p>
-          </SpotlightCard>
+          {features.map((f) => (
+            <SpotlightCard key={f.n} className="bg-[#15141F] border border-white/10 rounded-2xl p-6 flex flex-col justify-between">
+              <div className="w-10 h-10 rounded-xl bg-[#8B5CF6]/15 flex items-center justify-center text-[#C4B5FD] font-bold text-lg mb-4">
+                {f.n}
+              </div>
+              <h3 className="font-[Manrope] font-bold text-lg text-[#F8F7FC] mb-2">{f.title}</h3>
+              <p className="text-xs text-[#A6A3B0] leading-relaxed">{f.copy}</p>
+            </SpotlightCard>
+          ))}
         </div>
       </div>
     </section>
