@@ -1,103 +1,229 @@
 const chips = [
-  { label: "Python", className: "top-[18%] left-6", duration: "4.5s", delay: "0s" },
-  { label: "AI & ML", className: "top-[64%] left-3", duration: "5.8s", delay: "1s" },
-  { label: "Web Dev", className: "top-[16%] right-6", duration: "4.8s", delay: "0.5s" },
-  { label: "AWS", className: "top-[44%] right-3", duration: "5.2s", delay: "1.5s" },
-  { label: "DevOps", className: "top-[72%] right-10", duration: "6.0s", delay: "0.8s" },
+  {
+    label: "Python",
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 text-[#38BDF8] fill-none stroke-current stroke-[2]">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+      </svg>
+    ),
+    badge: "Core",
+    className: "top-[18%] left-6 lg:left-10",
+    duration: "4.5s",
+    delay: "0s",
+    glow: "shadow-[0_0_15px_rgba(56,189,248,0.25)]",
+  },
+  {
+    label: "AI & ML",
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 text-[#C084FC] fill-none stroke-current stroke-[2]">
+        <path d="M12 2v4m0 12v4M2 12h4m12 0h4m-3.17-6.83l-2.83 2.83m-8 8l-2.83 2.83m0-13.66l2.83 2.83m8 8l2.83 2.83" />
+      </svg>
+    ),
+    badge: "Trending",
+    className: "top-[64%] left-4 lg:left-8",
+    duration: "5.8s",
+    delay: "1s",
+    glow: "shadow-[0_0_15px_rgba(192,132,252,0.25)]",
+  },
+  {
+    label: "Web Dev",
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 text-[#34D399] fill-none stroke-current stroke-[2]">
+        <path d="M16 18l6-6-6-6M8 6l-6 6 6 6" />
+      </svg>
+    ),
+    badge: "Full Stack",
+    className: "top-[16%] right-6 lg:right-10",
+    duration: "4.8s",
+    delay: "0.5s",
+    glow: "shadow-[0_0_15px_rgba(52,211,153,0.25)]",
+  },
+  {
+    label: "AWS Cloud",
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 text-[#FBBF24] fill-none stroke-current stroke-[2]">
+        <path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z" />
+      </svg>
+    ),
+    badge: "Certified",
+    className: "top-[44%] right-4 lg:right-8",
+    duration: "5.2s",
+    delay: "1.5s",
+    glow: "shadow-[0_0_15px_rgba(251,191,36,0.25)]",
+  },
+  {
+    label: "DevOps & CI/CD",
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 text-[#F43F5E] fill-none stroke-current stroke-[2]">
+        <path d="M4 17l6-6-6-6m8 14h8" />
+      </svg>
+    ),
+    badge: "Hands-on",
+    className: "top-[72%] right-8 lg:right-14",
+    duration: "6.0s",
+    delay: "0.8s",
+    glow: "shadow-[0_0_15px_rgba(244,63,94,0.25)]",
+  },
 ];
 
 const stats = [
-  { value: "500+", label: "Learners Trained" },
-  { value: "3+", label: "Flagship Programs" },
-  { value: "100%", label: "Hands-on Projects" },
-  { value: "4.9/5", label: "Student Rating" },
+  { value: "500+", label: "Learners Trained", highlight: "Global community" },
+  { value: "3+", label: "Flagship Programs", highlight: "Industry curated" },
+  { value: "100%", label: "Hands-on Projects", highlight: "Portfolio ready" },
+  { value: "4.9/5", label: "Student Rating", highlight: "Verified reviews" },
 ];
 
 export default function Hero() {
   return (
-    <section id="home" className="relative w-full min-h-[88vh] bg-[#0B0A12] overflow-hidden flex items-center pt-24 pb-16">
-      {/* Background radial glows and grid pattern */}
+    <section id="home" className="relative w-full min-h-[92vh] bg-[#0B0A12] overflow-hidden flex items-center pt-28 pb-20">
+      {/* Background ambient lighting and grid overlay */}
       <div className="absolute inset-0 pointer-events-none">
+        {/* Soft top-center spotlight */}
+        <div className="absolute left-1/2 -top-24 -translate-x-1/2 w-[700px] h-[400px] bg-gradient-to-b from-[#8B5CF6]/25 via-[#7C3AED]/10 to-transparent blur-[120px] rounded-full" />
+        
+        {/* Secondary atmospheric glows */}
         <div
-          className="absolute -right-32 top-1/4 w-[560px] h-[560px] rounded-full bg-[#8B5CF6]/20 blur-[140px]"
+          className="absolute -right-24 top-1/4 w-[520px] h-[520px] rounded-full bg-[#8B5CF6]/15 blur-[140px]"
           style={{ animation: "heroPulse 9s ease-in-out infinite" }}
         />
         <div
-          className="absolute left-1/4 -bottom-40 w-[420px] h-[420px] rounded-full bg-[#7C3AED]/15 blur-[120px]"
+          className="absolute -left-20 bottom-10 w-[460px] h-[460px] rounded-full bg-[#7C3AED]/12 blur-[130px]"
           style={{ animation: "heroPulse 11s ease-in-out infinite 1.5s" }}
         />
+
+        {/* Tech Grid with smooth radial vignette */}
         <div
-          className="absolute inset-0 opacity-[0.06]"
+          className="absolute inset-0 opacity-[0.07]"
           style={{
-            backgroundImage: "radial-gradient(#FFFFFF 1px, transparent 1px)",
+            backgroundImage: "radial-gradient(#FFFFFF 1.2px, transparent 1.2px)",
             backgroundSize: "28px 28px",
+            maskImage: "radial-gradient(ellipse 80% 60% at 50% 40%, black 40%, transparent 100%)",
+            WebkitMaskImage: "radial-gradient(ellipse 80% 60% at 50% 40%, black 40%, transparent 100%)",
           }}
         />
       </div>
 
-      {/* Floating skill chips — xl+ only: below that there isn't enough
-          side margin around the centered content to fit these without overlap */}
+      {/* Floating skill cards — visible on xl+ screens where side margin allows */}
       <div className="absolute inset-0 pointer-events-none hidden xl:block">
         {chips.map((c) => (
-          <span
+          <div
             key={c.label}
-            className={`absolute ${c.className} inline-flex items-center gap-2 text-xs font-semibold text-[#D5D3DC] bg-[#15141F]/85 border border-[#8B5CF6]/30 backdrop-blur-md rounded-full px-4 py-2 shadow-[0_4px_20px_rgba(0,0,0,0.5)] z-20`}
+            className={`absolute ${c.className} flex items-center gap-2.5 text-xs font-semibold text-[#F8F7FC] bg-[#15141F]/90 border border-white/10 hover:border-[#8B5CF6]/50 backdrop-blur-xl rounded-full px-4 py-2 transition-all duration-300 hover:scale-105 z-20 ${c.glow}`}
             style={{ animation: `floatUp ${c.duration} ease-in-out ${c.delay} infinite` }}
           >
-            <span className="w-2 h-2 rounded-full bg-[#8B5CF6] shadow-[0_0_8px_#8B5CF6]" />
-            {c.label}
-          </span>
+            <span className="p-1 rounded-full bg-white/5 border border-white/10">
+              {c.icon}
+            </span>
+            <span>{c.label}</span>
+            <span className="text-[9px] text-[#A6A3B0] bg-white/5 px-2 py-0.5 rounded-full font-medium border border-white/5">
+              {c.badge}
+            </span>
+          </div>
         ))}
       </div>
 
       {/* Hero content container */}
       <div className="relative z-10 px-4 sm:px-6 md:px-10 max-w-4xl mx-auto text-center flex flex-col items-center">
-        <div className="inline-flex items-center gap-2 text-[11px] sm:text-xs font-semibold tracking-wide text-[#C4B5FD] bg-[#8B5CF6]/15 border border-[#8B5CF6]/30 rounded-full px-3.5 sm:px-4 py-1.5 mb-6 sm:mb-7 backdrop-blur-sm">
-          <span className="inline-block w-2 h-2 rounded-full bg-[#A855F7] animate-pulse" />
-          🎓 Live Instructor-Led Tech Academy
+        {/* Live cohort announcement badge */}
+        <div className="group inline-flex items-center gap-2.5 text-[11px] sm:text-xs font-semibold tracking-wide text-[#E9D5FF] bg-gradient-to-r from-[#8B5CF6]/20 via-[#7C3AED]/15 to-[#8B5CF6]/20 border border-[#8B5CF6]/35 rounded-full px-4 py-2 mb-6 sm:mb-8 backdrop-blur-md shadow-[0_0_20px_rgba(139,92,246,0.2)] hover:border-[#8B5CF6]/60 transition-all duration-300 cursor-default">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#A855F7] opacity-75" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#A855F7]" />
+          </span>
+          <span>Live Instructor-Led Tech Academy</span>
+          <span className="text-white/30 hidden xs:inline">•</span>
+          <span className="text-[#C4B5FD] font-normal hidden xs:inline">100% Practical Training</span>
         </div>
 
-        <h1 className="font-[Manrope] font-extrabold text-2xl sm:text-4xl md:text-5xl lg:text-[52px] leading-[1.15] text-[#F8F7FC] mb-5 sm:mb-6">
+        {/* Main Title */}
+        <h1 className="font-[Manrope] font-extrabold text-3xl sm:text-5xl md:text-6xl lg:text-[58px] leading-[1.12] tracking-tight text-[#F8F7FC] mb-5 sm:mb-6">
           Master Future Skills.{" "}
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#C4B5FD] via-[#A855F7] to-[#8B5CF6]">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#C4B5FD] via-[#D8B4FE] to-[#A855F7] drop-shadow-[0_4px_24px_rgba(168,85,247,0.3)]">
             Build Real Projects.
           </span>{" "}
           Learn from Anywhere.
         </h1>
 
+        {/* Subtitle */}
         <p className="text-sm sm:text-base md:text-lg text-[#A6A3B0] max-w-2xl mb-8 sm:mb-10 leading-relaxed font-normal">
           Live online, instructor-led technology training designed to help learners
           build practical skills, real-world portfolio projects, and industry-ready confidence
           from anywhere in the world.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 mb-10 sm:mb-14 w-full sm:w-auto">
+        {/* CTA Buttons */}
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3.5 sm:gap-4 mb-8 sm:mb-10 w-full sm:w-auto">
           <a
             href="#courses"
-            className="group inline-flex items-center justify-center gap-2.5 text-sm font-semibold text-white bg-gradient-to-r from-[#A855F7] to-[#7C3AED] hover:opacity-95 hover:shadow-[0_12px_32px_rgba(139,92,246,0.45)] hover:-translate-y-0.5 rounded-full px-7 sm:px-8 py-3.5 sm:py-4 transition-all duration-300 w-full sm:w-auto text-center"
+            className="group relative inline-flex items-center justify-center gap-2.5 text-sm font-semibold text-white bg-gradient-to-r from-[#A855F7] to-[#7C3AED] hover:opacity-95 rounded-full px-8 py-4 transition-all duration-300 shadow-[0_8px_30px_rgba(139,92,246,0.4)] hover:shadow-[0_12px_40px_rgba(139,92,246,0.6)] hover:-translate-y-0.5 active:scale-[0.98] w-full sm:w-auto text-center"
           >
             <span>Explore Programs</span>
-            <svg viewBox="0 0 24 24" className="w-4 h-4 stroke-current fill-none stroke-[2] transition-transform duration-300 group-hover:translate-x-1">
+            <svg
+              viewBox="0 0 24 24"
+              className="w-4 h-4 stroke-current fill-none stroke-[2.2] transition-transform duration-300 group-hover:translate-x-1"
+            >
               <path d="M5 12h14M13 6l6 6-6 6" />
             </svg>
           </a>
           <a
             href="#contact"
-            className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-[#F8F7FC] bg-[#15141F] border border-white/15 hover:border-[#8B5CF6]/50 hover:bg-[#1C1B2A] hover:-translate-y-0.5 rounded-full px-7 sm:px-8 py-3.5 sm:py-4 transition-all duration-300 w-full sm:w-auto text-center"
+            className="inline-flex items-center justify-center gap-2.5 text-sm font-semibold text-[#F8F7FC] bg-[#15141F]/90 border border-white/15 hover:border-[#8B5CF6]/60 hover:bg-[#1E1C2D] hover:-translate-y-0.5 active:scale-[0.98] rounded-full px-8 py-4 transition-all duration-300 shadow-sm w-full sm:w-auto text-center"
           >
+            <svg viewBox="0 0 24 24" className="w-4 h-4 text-[#C4B5FD] fill-none stroke-current stroke-[2]">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+              <line x1="16" y1="2" x2="16" y2="6" />
+              <line x1="8" y1="2" x2="8" y2="6" />
+              <line x1="3" y1="10" x2="21" y2="10" />
+            </svg>
             <span>Free Consultation</span>
           </a>
         </div>
 
+        {/* Social Proof & Rating Strip */}
+        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-10 sm:mb-14 text-xs text-[#A6A3B0]">
+          {/* Overlapping student avatar cluster */}
+          <div className="flex -space-x-2 overflow-hidden">
+            <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-gradient-to-tr from-[#9333EA] to-[#C084FC] text-white font-bold text-[10px] ring-2 ring-[#0B0A12]">
+              AK
+            </span>
+            <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-gradient-to-tr from-[#2563EB] to-[#60A5FA] text-white font-bold text-[10px] ring-2 ring-[#0B0A12]">
+              RS
+            </span>
+            <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-gradient-to-tr from-[#059669] to-[#34D399] text-white font-bold text-[10px] ring-2 ring-[#0B0A12]">
+              PT
+            </span>
+            <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-gradient-to-tr from-[#D97706] to-[#FBBF24] text-white font-bold text-[10px] ring-2 ring-[#0B0A12]">
+              MK
+            </span>
+          </div>
+
+          {/* Star rating and review count */}
+          <div className="flex items-center gap-1.5">
+            <div className="flex text-[#FBBF24]">
+              {"★".repeat(5)}
+            </div>
+            <span className="font-semibold text-[#F8F7FC]">4.9/5</span>
+            <span className="text-[#8E8B9D]">from 500+ happy learners</span>
+          </div>
+        </div>
+
         {/* Trust Stats Bar */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 xs:gap-4 sm:gap-8 py-5 sm:py-6 px-3 xs:px-4 sm:px-8 rounded-2xl bg-[#15141F]/60 border border-white/10 backdrop-blur-md w-full max-w-3xl">
-          {stats.map((s) => (
-            <div key={s.label} className="text-center relative">
-              <div className="font-[Manrope] font-extrabold text-xl sm:text-3xl text-[#F8F7FC] bg-clip-text text-transparent bg-gradient-to-b from-white to-[#D5D3DC]">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-0 py-6 px-4 sm:px-6 rounded-2xl bg-gradient-to-b from-[#15141F]/80 to-[#12111B]/80 border border-white/10 backdrop-blur-xl w-full max-w-3xl shadow-[0_16px_40px_rgba(0,0,0,0.4)]">
+          {stats.map((s, idx) => (
+            <div
+              key={s.label}
+              className={`text-center relative flex flex-col items-center justify-center px-2 ${
+                idx !== stats.length - 1 ? "sm:border-r sm:border-white/10" : ""
+              }`}
+            >
+              <div className="font-[Manrope] font-extrabold text-2xl sm:text-3xl text-transparent bg-clip-text bg-gradient-to-b from-white via-[#F8F7FC] to-[#C4B5FD] tracking-tight">
                 {s.value}
               </div>
-              <div className="text-[10px] sm:text-xs text-[#8E8B9D] font-medium tracking-wide mt-1">
+              <div className="text-[11px] sm:text-xs text-[#F8F7FC] font-semibold tracking-wide mt-1">
                 {s.label}
+              </div>
+              <div className="text-[9px] sm:text-[10px] text-[#8E8B9D] mt-0.5">
+                {s.highlight}
               </div>
             </div>
           ))}
@@ -107,7 +233,7 @@ export default function Hero() {
       <style>{`
         @keyframes floatUp {
           0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-14px); }
+          50% { transform: translateY(-12px); }
         }
         @keyframes heroPulse {
           0%, 100% { transform: scale(1); opacity: 1; }

@@ -122,9 +122,15 @@ export default function Navbar() {
         <a
           href="#courses"
           onClick={(e) => handleNavClick(e, "#courses")}
-          className="hidden sm:inline-flex items-center text-xs xl:text-sm font-semibold tracking-wide text-white bg-gradient-to-r from-[#A855F7] to-[#7C3AED] hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] rounded-full px-4 py-2 xl:px-6 xl:py-2.5 transition-all duration-300 shadow-[0_8px_24px_rgba(139,92,246,0.35)] whitespace-nowrap"
+          className="group hidden sm:inline-flex items-center gap-2 text-xs xl:text-sm font-semibold tracking-wide text-white bg-gradient-to-r from-[#A855F7] to-[#7C3AED] hover:opacity-95 hover:scale-[1.02] active:scale-[0.98] rounded-full px-4 py-2 xl:px-6 xl:py-2.5 transition-all duration-300 shadow-[0_8px_24px_rgba(139,92,246,0.35)] whitespace-nowrap"
         >
-          Explore Courses
+          <span>Explore Courses</span>
+          <svg
+            viewBox="0 0 24 24"
+            className="w-3.5 h-3.5 stroke-current fill-none stroke-[2.2] transition-transform duration-300 group-hover:translate-x-1"
+          >
+            <path d="M5 12h14M13 6l6 6-6 6" />
+          </svg>
         </a>
 
         {/* Mobile / Tablet Menu Button (< lg) */}
@@ -178,9 +184,12 @@ export default function Navbar() {
             <a
               href="#courses"
               onClick={(e) => handleNavClick(e, "#courses")}
-              className="inline-flex w-full items-center justify-center text-sm font-semibold text-white bg-gradient-to-r from-[#A855F7] to-[#7C3AED] rounded-full py-3 shadow-[0_8px_24px_rgba(139,92,246,0.35)]"
+              className="group inline-flex w-full items-center justify-center gap-2 text-sm font-semibold text-white bg-gradient-to-r from-[#A855F7] to-[#7C3AED] rounded-full py-3 shadow-[0_8px_24px_rgba(139,92,246,0.35)]"
             >
-              Start Learning
+              <span>Start Learning</span>
+              <svg viewBox="0 0 24 24" className="w-4 h-4 stroke-current fill-none stroke-[2] transition-transform duration-300 group-hover:translate-x-1">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
             </a>
           </li>
         </ul>
